@@ -6,9 +6,12 @@ import { github } from '../utils/Icons';
 import ThemeDropdown from './ThemeDropdown/ThemeDropdown';
 import { Search } from 'lucide-react';
 import SearchDialog from './SearchDialog/SearchDialog';
+import { useGlobalContext } from '../context/globalContext';
 
 function Navbar() {
     const router = useRouter();
+    const { state } = useGlobalContext();
+    
   return (
     <div className="w-full py-4 flex items-center justify-between">
         <div className="left"></div>
@@ -17,8 +20,8 @@ function Navbar() {
           <div className="btn-group flex items-center gap-2">
           <ThemeDropdown />
             <Button className='source-code flex items-center gap-2' onClick={() => {
-                router.push('https://www.github.com');
-            }}>{github}Source Code</Button>
+                router.push('https://github.com/abhinavpirta');
+            }}>{github}Abhinav Pirta</Button>
           </div>
         </div>
     </div>
